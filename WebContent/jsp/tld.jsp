@@ -8,7 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript"></script>
-tld jsp test
+<script type="text/javascript">
+var size = 20;
+<s:set name="start" value=size></s:set>
+</script>
+<s:subset source="" start="" count="">
+</s:subset>
+<s:property value="#start"/>
 </body>
 </html>
