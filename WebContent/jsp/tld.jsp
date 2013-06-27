@@ -6,14 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
 </head>
 <body>
+<s:hidden id="size" name="size" value="12"/>
+<s:set name="start" id="start" value="size"></s:set>
 <script type="text/javascript">
-var size = 20;
-<s:set name="start" value=size></s:set>
+var start = $("#size");
 </script>
-<s:subset source="" start="" count="">
-</s:subset>
 <s:property value="#start"/>
 </body>
 </html>
