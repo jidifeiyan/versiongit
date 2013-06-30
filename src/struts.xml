@@ -4,19 +4,15 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<constant name="struts.devMode" value="true" />
-	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
-	<include file="com/skywing/struts/config/struts-page.xml"/>
-	<include file="com/skywing/struts/config/struts-personal.xml"/>
-	<include file="com/skywing/struts/config/struts-favorite.xml" />
-	<include file="com/skywing/struts/config/struts-user.xml" />
-	<include file="com/skywing/struts/config/struts-subscribe.xml" />
-	<include file="com/skywing/struts/config/struts-download.xml" />
-	<package name="default" extends="struts-default" namespace="/">
-		 <action name="*_*" class="com.skywing.action.{1}Action"
-			method="{2}">
-			<result name="custom" >/${view}/${target}.jsp</result>
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="default" extends="struts-default">
+		 <action name="getData" class="com.web.action.IndexAction"
+			method="getIndexData">
+			<result name="custom" >/jsp/${target}.jsp</result>
 		</action> 
+		 <action name="getJsonData" class="com.web.action.IndexAction"
+			method="getJsonData">
+		</action>
 	</package>
 	
 </struts>
