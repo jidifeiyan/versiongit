@@ -29,18 +29,22 @@
 				if (top > h) {
 					var pagesize = $("#pagesize").val();
 					$(window).unbind("scroll", getmorest);
-					var tbody = "<div>";
+					var count = $("[name=scroll]").length;
+					if((count%3)==0){
+						 $("[name=scroll]").remove();
+						 $.post('getJsonData',{pagesize:pagesize},function(json){
+		                    	
+		                    });
+					}
+					var tbody = "<div name='scroll'>";
                     for(var i=0;i<size;i++){
                     	tbody += "asdfasdfasdfadfasdf==========="+size+"<br>";
                     }
                     tbody += "</div>";
                     $("[name=scroll]:last").after(tbody);
                     $("#pagesize").val(1*pagesize+1);
-                    $
                     $(window).scroll(getmorest);
-                    $.post('getJsonData',{pagesize:pagesize},function(json){
-                    	
-                    });
+                   
                     
 					/* $.post('getData', {
 						eid : endid

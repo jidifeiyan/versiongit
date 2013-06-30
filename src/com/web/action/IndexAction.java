@@ -34,8 +34,14 @@ public class IndexAction extends BaseAction{
 		try {
 			HttpServletResponse res = ServletActionContext.getResponse();
 			PrintWriter out = res.getWriter();
+			for (int i = 0; i < 100; i++) {
+				UserBean bean = new UserBean();
+				bean.setUsername("天外來客====="+i);
+				bean.setMobilephone("13698698745====="+i);
+				list.add(bean);
+			}
 			  Gson gson = new Gson();
-              String json = gson.toJson(pagesize);
+              String json = gson.toJson(list);
               System.out.println(json);
               out.print(json);
 		} catch (IOException e) {
